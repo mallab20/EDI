@@ -1,0 +1,6 @@
+Link do przeglądarki internetowej, który pokazuje wygenerowane 10 wierszy z pliku hotel.json:
+https://my.api.mockaroo.com/hotel.json?key=52ceb870
+Adres, który kopiujecie i wklejacie w okno dialogowe git Basha lub w cmd (command prompt) w terminalu na VSCode:
+curl -H "X-API-Key: 52ceb870" https://my.api.mockaroo.com/hotel.json
+
+
