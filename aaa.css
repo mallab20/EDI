@@ -11,7 +11,7 @@ body{
     color: white;
     padding-bottom: 5px;
 }
-h1,h3{
+#header > h1, p{
     margin: 0;
     padding: 0;
 }
@@ -20,7 +20,7 @@ h1,h3{
     padding: 0;
     margin: 0;
     float: left;
-    width: 8%;
+    width: 5vw;
     height:100vh;
     overflow:auto;
     background: rgb(244, 230, 146);
@@ -30,10 +30,12 @@ h1,h3{
     padding: 0;
     margin: 0;
     float: right;
-    width: 20%;
+    width: 20vw;
     height:100vh;
     overflow:auto;
     background: rgb(244, 230, 146);
+    margin-left:20px;
+    align-items: center;
 }
 
 #internet{
@@ -42,7 +44,7 @@ h1,h3{
 
 #footer{
     bottom: 0px;
-    width: 100%;
+    width: 100vw;
     height:100px;
     background-color: pink;
     position: fixed;
@@ -57,15 +59,76 @@ h1,h3{
 img{
     display:block;
     width: 280px;
-    height: 150px;
+    height: 170px;
     margin: 15px;
 }
 
-.informacje{
+#informacje{
     background-color: blanchedalmond;
-    height: 500px;
-    width: 40%;
+    height: 560px;
+    width: 40vw;
     margin-top:20px;
     display: inline;
     float: left;
+}
+
+#internet{
+    bottom: 100px;
+}
+
+.dark-mode{
+    background-color: black;
+}
+.dark-mode #header, .dark-mode #footer{
+    background-color: #010c1f;
+}
+.dark-mode #informacje{
+    background-color: #150e42;
+}
+
+.dark-mode #lewo, .dark-mode #prawo{
+    background-color: #120926;
+}
+
+#prawo > button {
+    background-color: inherit;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#prawo > button::before {
+    content: '';
+    background-color: #6565a3;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 100%;
+    transition: 0.5s all ease-in-out;
+}
+
+#prawo > button:hover::before {
+    top: 0;
+    cursor: pointer;
+}
+
+#prawo > button img {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    z-index: 1;
+    transition: 0.5s all ease-in-out;
+}
+
+#prawo > button:hover img {
+    transform: rotate(360deg);
+    cursor: pointer;
 }
