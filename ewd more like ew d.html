@@ -7,22 +7,23 @@
 
 <body>
     <div id = "header">
-        <h1> TYTUŁ </h1>
-        <h3> Osoba 1</h3>
-        <h3> Osoba 2</h3>
-        <h3> Osoba 3</h3>
+        <h1> Hotele </h1>
+        <p> Małgorzata Łabuzek</p>
+        <p> Kamila Łopatowska</p>
+        <p> Łucja Romańska</p>
     </div>
     <div id = "główna">
         <div id = "lewo"></div>
         <div class = "środek">
             <div id = "zdjęcia">
-                <img src="włochy.jpg">
-                <img src="portugalia.jpg">
-                <img src="grecja.jpg">
+                <img id = "włochy" src="włochy.jpg">
+                <img id = "portugalia" src="portugalia.jpg">
+                <img id = "grecja" src="grecja.jpg">
             </div>
-            <div class = "informacje"></div>
+            <div id = "informacje"></div>
             <div id = "tabela"></div>
         <div id = "prawo">
+            <button id = "myButton"onclick="darkmode()"><img id = "księżyc" src = "moon.png" /></button>
             <div id = "internet">
             <form autocomplete="off" action="https://duckduckgo.com/?" target="_blank">
                 <label for="fname">SEARCH</label><br>
@@ -35,4 +36,37 @@
             <p> REKLAMA </p>
         </div>
     </div>
+
+<script>
+    function darkmode() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+    }
+</script>
+<script>
+const img1 = document.getElementById("włochy");
+const img2 = document.getElementById("portugalia");
+const img3 = document.getElementById("grecja");
+const img4 = document.getElementById("księżyc");
+const myButton = document.getElementById("myButton");
+
+let isFirstImage = true;
+
+myButton.addEventListener("click", function() {
+  if (isFirstImage) {
+    img1.src = "włochynoc.jpg";
+    img2.src = "portugalianoc.jpg";
+    img3.src = "grecjanoc.jpg";
+    img4.src = "sun.png"
+  } else {
+    img1.src = "włochy.jpg";
+    img2.src = "portugalia.jpg"
+    img3.src = "grecja.jpg";
+    img4.src = "moon.png"
+  }
+  isFirstImage = !isFirstImage;
+
+  
+});
+</script>
 </body>
