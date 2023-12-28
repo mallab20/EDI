@@ -53,6 +53,9 @@ body{
 
 #tabela{
     float: left;
+    width: 70vw;
+    margin-top:20px;
+    margin-left: 10px;
 }
 #zdjęcia{
     float:left;
