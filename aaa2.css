@@ -53,6 +53,8 @@ body{
 
 #tabela{
     float: left;
+    overflow-x: scroll;
+    overflow-y: scroll;
 }
 #zdjęcia{
     float:left;
