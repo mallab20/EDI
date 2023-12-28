@@ -55,6 +55,7 @@ body{
     float: left;
     overflow-x: scroll;
     overflow-y: scroll;
+    width: 50vw;
 }
 #zdjęcia{
     float:left;
