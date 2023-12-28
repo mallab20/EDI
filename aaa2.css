@@ -53,13 +53,6 @@ body{
 
 #tabela{
     float: left;
-    overflow: hidden;
-    overflow-x: scroll;
-    overflow-y: scroll;
-    width: 600px;
-    height: 300px;
-    margin-top:20px;
-    margin-left: 10px;
 }
 #zdjęcia{
     float:left;
