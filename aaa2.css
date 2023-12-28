@@ -21,7 +21,7 @@ body{
     margin: 0;
     float: left;
     width: 5vw;
-    height:1000px;
+    height:100vh;
     overflow:auto;
     background: rgb(244, 230, 146);
 }
@@ -53,6 +53,7 @@ body{
 
 #tabela{
     float: left;
+    overflow: hidden;
     overflow-x: scroll;
     overflow-y: scroll;
     width: 300px;
