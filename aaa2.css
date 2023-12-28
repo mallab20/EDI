@@ -57,6 +57,8 @@ body{
     overflow-x: scroll;
     overflow-y: scroll;
     width: 300px;
+    margin-top:20px;
+    margin-left: 10px;
 }
 #zdjęcia{
     float:left;
@@ -80,11 +82,7 @@ img{
     display: inline;
     float: left;
 }
-#tabela{
-    width: 70vw;
-    margin-top:20px;
-    margin-left: 10px;
-}
+
 #internet{
     bottom: 100px;
 }
