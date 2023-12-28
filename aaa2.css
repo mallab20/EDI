@@ -21,7 +21,7 @@ body{
     margin: 0;
     float: left;
     width: 5vw;
-    height:100vh;
+    height:1000px;
     overflow:auto;
     background: rgb(244, 230, 146);
 }
