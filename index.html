@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<head> 
+    <title> projekt grupowy ewd</title>
+    <link rel = "stylesheet" href = "aaa.css">
+</head>
+
+<body>
+    <div id = "header">
+        <h1> Hotele </h1>
+        <p> Małgorzata Łabuzek</p>
+        <p> Kamila Łopatowska</p>
+        <p> Łucja Romańska </p>
+    </div>
+    <div id = "główna">
+        <div id = "lewo">
+
+        </div>
+        <div id = "środek">
+            <div id = "zdjęcia">
+                <img id = "włochy" src="włochy.jpg">
+                <img id = "portugalia" src="portugalia.jpg">
+                <img id = "grecja" src="grecja.jpg">
+            </div>
+            <div id = "informacje">
+
+            </div>
+            <div id = "prawo">
+                <button id = "myButton"onclick="darkmode()"><img id = "księżyc" src = "moon.png" /></button>
+                <div id = "internet">
+                <form autocomplete="off" action="https://duckduckgo.com/?" target="_blank">
+                    <label for="fname">SEARCH</label><br>
+                    <input type="text" id="q" name="q" value=""><br>
+                    <input type="submit" value="Szukaj">
+                    </form>
+                </div>
+            </div>    
+            <div id = "tabela">
+                <table id="table1" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Kraj</th>
+                            <th>Miasto</th>
+                            <th>Hotel</th>
+                            <th>Cena za noc</th>
+                            <th>Ilość osób</th>
+                            <th>Gwiazdki</th>
+                            <th>Średnia ocena</th>
+                            <th>Basen</th>
+                            <th>Wifi</th>
+                            <th>Odległość od plaży</th>
+                            <th>Odległość od lotniska</th>
+                            <th>Email</th>
+                            <th>Strona</th>
+                            <th>Numer</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-output">
+            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      
+        <div id = "footer">
+            <p> REKLAMA </p>
+        </div>
+
+<script>
+    function darkmode() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+    }
+</script>
+<script>
+const img1 = document.getElementById("włochy");
+const img2 = document.getElementById("portugalia");
+const img3 = document.getElementById("grecja");
+const img4 = document.getElementById("księżyc");
+const myButton = document.getElementById("myButton");
+
+let isFirstImage = true;
+
+myButton.addEventListener("click", function() {
+  if (isFirstImage) {
+    img1.src = "włochynoc.jpg";
+    img2.src = "portugalianoc.jpg";
+    img3.src = "grecjanoc.jpg";
+    img4.src = "sun.png"
+  } else {
+    img1.src = "włochy.jpg";
+    img2.src = "portugalia.jpg"
+    img3.src = "grecja.jpg";
+    img4.src = "moon.png"
+  }
+  isFirstImage = !isFirstImage;
+
+  
+});
+</script>
+
+</body>
+<script>
+    fetch('Hotel_EDI.json')
+.then(response => response.json())
+.then(data => {
+    const tableBody = document.getElementById('data-output');
+
+    data.forEach(element => {
+        const tableRow = document.createElement('tr');
+        tableRow.innerHTML = `
+            <td>${element['kraj ']}</td>
+            <td>${element.miasto}</td>
+            <td>${element.hotel}</td>
+            <td>${element.cena_za_noc}</td>
+            <td>${element.ilosc_osob}</td>
+            <td>${element.gwiazdki}</td>
+            <td>${element.srednia_ocena}</td>
+            <td>${element.basen}</td>
+            <td>${element.wifi}</td>
+            <td>${element.odleglosc_plaza}</td>
+            <td>${element.odleglosc_lotnisko}</td>
+            <td>${element.email}</td>
+            <td>${element.strona}</td>
+            <td>${element.numer}</td>
+        `;
+        tableBody.appendChild(tableRow);
+    });
+})
+.catch(error => {
+    console.error('Error fetching or parsing JSON:', error);
+});
+
+
+</script>
