@@ -82,7 +82,7 @@ img{
     border-collapse: collapse;
     margin-bottom:105px;
     display: block;
-    overflow-x: auto;
+    overflow-x: scroll;
     white-space: nowrap;
 }
   }
