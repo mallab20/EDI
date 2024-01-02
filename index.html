@@ -77,7 +77,7 @@ fetch('Hotel_EDI.json')
         // Count occurrences of each country
         const countryCounts = {};
         data.forEach(entry => {
-            const country = entry.kraj;
+            const country = entry.kraj ;
             countryCounts[country] = (countryCounts[country] || 0) + 1;
         });
 
