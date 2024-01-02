@@ -80,8 +80,6 @@ img{
 #table1 {
     width: 100%;
     border-collapse: collapse;
-    overflow-x: auto;
-    white-space: nowrap;
     margin-bottom:105px;
 }
   }
