@@ -99,10 +99,12 @@ fetch('Hotel_EDI.json')
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                title: {
-                    display: true,
-                    text: 'Liczba hoteli w poszczególnych krajach',
-                    fontSize: 16, // Set the font size as needed
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Liczba hoteli w poszczególnych krajach',
+                        fontSize: 16,
+                    }
                 }
             }
         });
