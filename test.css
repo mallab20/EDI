@@ -110,7 +110,9 @@ img{
     background-color: pink;
 }
 
-
+#chart1{
+    margin-bottom: 101px;
+}
 .dark-mode #table1 {
   color: #fff;
   background-color: #343a40;
