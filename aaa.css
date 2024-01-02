@@ -1,3 +1,10 @@
+table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-bottom:105px;
+}
+
 body{
     padding: 0;
     margin: 0;
