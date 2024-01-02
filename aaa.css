@@ -1,10 +1,3 @@
-table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-    margin-bottom:105px;
-}
-
 body{
     padding: 0;
     margin: 0;
@@ -87,7 +80,11 @@ img{
 #table1 {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-bottom:105px;
+}
   }
   
 #table1 th,
