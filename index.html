@@ -88,11 +88,11 @@ fetch('Hotel_EDI.json')
         // Create Chart.js circle chart
         const ctx = document.getElementById('hotelsChart').getContext('2d');
         new Chart(ctx, {
-            type: 'doughnut',
+            type: 'pie',
             data: {
                 labels: labels,
                 datasets: [{
-                    data: values,
+                    data: [Portugalia, Grecja, Włochy]
                     backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
                 }]
             },
