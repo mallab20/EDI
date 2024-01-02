@@ -76,7 +76,11 @@ img{
 #internet{
     bottom: 100px;
 }
-
+div.tabela{
+    overflow:hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
 #table1 {
     width: 100%;
     border-collapse: collapse;
