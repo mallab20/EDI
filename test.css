@@ -30,15 +30,14 @@ body{
     padding: 0;
     margin: 0;
     float: right;
-    margin-right: 0px;
     width: 20vw;
     height:100vh;
-    margin-left: 50px;
     overflow:auto;
     background: rgb(244, 230, 146);
+    margin-left:20px;
     align-items: center;
-    right: 0%;
 }
+
 #internet{
     margin-left: 10px;
 }
@@ -51,12 +50,7 @@ body{
     position: fixed;
 }
 
-#tabela{
-    float: left;
-    width: 70vw;
-    margin-top:20px;
-    margin-left: 10px;
-}
+
 #zdjęcia{
     float:left;
     margin-left: 5px;
@@ -75,7 +69,6 @@ img{
     height: 560px;
     width: 40vw;
     margin-top:20px;
-    margin-right: 44px;
     display: inline;
     float: left;
 }
@@ -83,6 +76,71 @@ img{
 #internet{
     bottom: 100px;
 }
+
+#table1 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom:105px;
+}
+  }
+  
+#table1 th,
+#table1 td {
+    border: 1px solid pink;
+    padding: 8px;
+}
+  
+#table1 th {
+    background-color: blanchedalmond;
+    text-align: left;
+}
+  
+#table1 tbody tr:nth-child(even) {
+    background-color: blanchedalmond;
+}
+  
+#table1 tbody tr:hover {
+    background-color: pink;
+}
+
+
+.dark-mode #table1 {
+  color: #fff;
+  background-color: #343a40;
+}
+
+.dark-mode #table1 tbody tr:nth-child(even) {
+    background-color: #3f4750;
+}
+
+.dark-mode #table1 th,
+.dark-mode #table1 td,
+.dark-mode #table1 thead th {
+  border-color: #454d55;
+}
+
+.dark-mode #table1 th {
+  background-color: #23272b;
+}
+
+.dark-mode #table1 tbody+tbody {
+  border-top-color: #454d55;
+}
+
+.dark-mode #table1 .table-bordered {
+  border: 0;
+}
+
+.dark-mode #table1 .table-bordered th,
+.dark-mode #table1 .table-bordered td {
+  border: 1px solid #454d55;
+}
+
+  
+.dark-mode #table1 tbody tr:hover {
+    background-color: #23272b;
+}
+
 
 .dark-mode{
     background-color: black;
@@ -132,6 +190,7 @@ img{
     width: 50px;
     height: 50px;
     position: relative;
+    z-index: 1;
     transition: 0.5s all ease-in-out;
 }
 
