@@ -130,39 +130,28 @@ fetch('Hotel_EDI.json')
           }
         });
 
-        // data, colors
-        const labels = Object.keys(countryCounts);
-        const itemData = Object.values(countryCounts);
+        // create barChart
+        const ctx = document.getElementById('barChart');
 
-        const dataConfig = {
-          labels: labels,
-          datasets: [{
-            data: itemData,
-            backgroundColor: ["rgb(68, 172, 201)", "rgb(36, 187, 242)", "rgb(36, 43, 242)"]
-          }]
-        };
-
-        const chartConfig = {
-          type: 'bar',
-          data: dataConfig,
-          options: {
-            plugins: {
-              legend: {
-                display: false,
+          new Chart(ctx, {
+              type: 'bar',
+              data: {
+                  datasets: [{
+                      labels: labels,
+                      data: values,
+                      borderWidth: 1
+                      backgroundColor: ["rgb(68, 172, 201)", "rgb(36, 187, 242)", "rgb(36, 43, 242)"]
+                  }]
               },
-              title: {
-                display: true,
-                text: 'Ilość hoteli z dostępem do wifi w danym kraju',
-              }
-            }
-          }
-        };
-
-        const chart = new Chart(
-          document.getElementById('myChart'),
-          chartConfig
-        );
-      });  
+             options: {
+                 scales: {
+                     y: {
+                         beginAtZero: true
+                     }
+                 }
+             }
+          });
+                
 </script>
 <script>
     function hideFooter() {
