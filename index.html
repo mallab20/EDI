@@ -131,7 +131,7 @@ fetch('Hotel_EDI.json')
         });
 
         // create barChart
-        const ctx = document.getElementById('barChart');
+        const ctx = document.getElementById('barChart').getContext('2d');
 
           new Chart(ctx, {
               type: 'bar',
