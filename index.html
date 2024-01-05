@@ -111,6 +111,55 @@ fetch('Hotel_EDI.json')
     })
     .catch(error => console.error('Error fetching data:', error));
     </script>
+<script> 
+       fetch('Hotel_EDI.json')
+      .then(response => response.json())
+      .then(data => {
+        const countryCounts = {};
+        data.forEach(entry => {
+          // assuming 'wifi' is a property indicating access to WiFi
+          const hasWiFiAccess = entry['wifi'] || false;
+          // count if the country has access to WiFi
+          if (hasWiFiAccess) {
+            const country = (entry['kraj '] || '').trim();
+            countryCounts[country] = (countryCounts[country] || 0) + 1;
+          }
+        });
+
+        // data, colors
+        const labels = Object.keys(countryCounts);
+        const itemData = Object.values(countryCounts);
+
+        const dataConfig = {
+          labels: labels,
+          datasets: [{
+            data: itemData,
+            backgroundColor: ["rgb(68, 172, 201)", "rgb(36, 187, 242)", "rgb(36, 43, 242)"]
+          }]
+        };
+
+        const chartConfig = {
+          type: 'bar',
+          data: dataConfig,
+          options: {
+            plugins: {
+              legend: {
+                display: false,
+              },
+              title: {
+                display: true,
+                text: 'Ilość hoteli z dostępem do wifi w danym kraju',
+              }
+            }
+          }
+        };
+
+        const chart = new Chart(
+          document.getElementById('myChart'),
+          chartConfig
+        );
+      });  
+</script>
 <script>
     function hideFooter() {
     var footer = document.getElementById('footer');
