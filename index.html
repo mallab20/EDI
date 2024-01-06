@@ -83,6 +83,13 @@ fetch('Hotel_EDI.json')
                 }
             }
         });
+        const myButton = document.getElementById("myButton");
+        let background = true;
+        myButton.addEventListener("click", function(){
+            if (background):{
+                backgroundColor: ['black','white','blue']
+            }
+                
     })
                     .catch(error => console.error('Error fetching data:', error));
             </script>
