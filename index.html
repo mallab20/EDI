@@ -117,20 +117,13 @@ fetch('Hotel_EDI.json')
                         'white',
                         'white',
                         ],
-                        borderWidth: 2
+                        borderWidth: 2,
                     }]
                 };
                 const config = {
                     type: 'bar',
                     data: data,
                     options: {
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Liczba hoteli z dostępem do wifi',
-                                fontSize: 16,
-                            }
-                        },
                         scales: {
                             y: {
                                 beginAtZero: true
