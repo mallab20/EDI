@@ -79,7 +79,7 @@ img{
 #search{
     color: black;
 }
-.darkmode #search{
+.dark-mode #search{
     color: white;
 }
 #table1 {
