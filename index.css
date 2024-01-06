@@ -65,7 +65,7 @@ img{
 }
 img: hover{
      border: 5px solid;
-     border-color: rgb(245, 66, 221);
+     color: rgb(245, 66, 221);
 }
 
 #informacje{
