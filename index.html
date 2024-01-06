@@ -83,19 +83,6 @@ fetch('Hotel_EDI.json')
                 }
             }
         });
-              const myButton = document.getElementById("myButton");
-let background = true;
-
-myButton.addEventListener("click", function () {
-    const chart = Chart.getChart("hotelsChart");
-
-    chart.data.datasets[0].backgroundColor = background
-        ? ['black', 'white', 'blue']
-        : ['pink', 'rgb(244, 230, 146)', 'blanchedalmond'];
-
-    chart.update();
-    background = !background;
-});
     })
                     .catch(error => console.error('Error fetching data:', error));
             </script>
@@ -154,19 +141,6 @@ myButton.addEventListener("click", function () {
                 var barChart = new Chart(
                     document.getElementById('barChart'), config
                 ); 
-            const myButton = document.getElementById("myButton");
-let background = true;
-
-myButton.addEventListener("click", function () {
-    const chart = Chart.getChart("barChart");
-
-    chart.data.datasets[0].backgroundColor = background
-        ? ['black', 'white', 'blue']
-        : ['pink', 'rgb(244, 230, 146)', 'blanchedalmond'];
-
-    chart.update();
-    background = !background;
-});
              })
             .catch(error => console.error('Error fetching JSON:', error));
    
