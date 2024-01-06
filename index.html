@@ -88,34 +88,38 @@ fetch('Hotel_EDI.json')
             </script>
 <script> 
     fetch('Hotel_EDI.json')
-            .then(response => response.json())
-            .then(jsondata => {
+        .then(response => response.json())
+        .then(jsondata => {
                 console.log(jsondata.kraj);
-    
+            
                 let countF = 0;
                 let countT = 0;
                 jsondata.forEach(item => {
                     if (item.wifi === true) {
                         countT++;
                     } else {
-                        countF++;
-                    }
-                });
+                        countF++; }
+                    });
                 console.log('Number of true values for wifi:', countT);
-                console.log('Number of false occurrences in wifi section:', countF);
-    
-                const labels = ['Has wifi access', 'No wifi'];
+                console.log('Number of false occurences in wifi section:', countF);
+        
+                const labels = ['Has wifi access','No wifi']
                 const data = {
                     labels: labels,
                     datasets: [{
-                        label: 'Hotele z dostępem do wifi', // Adjusted to a string
+                        label:'Number of hotels with wifi access',
                         data: [countT, countF],
-                        backgroundColor: ['rgb(244, 230, 146)', 'blanchedalmond'],
-                        borderColor: ['white', 'white'],
+                        backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(255, 159, 64, 0.7)'
+                        ],
+                        borderColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(255, 159, 64)',
+                        ],
                         borderWidth: 1
                     }]
                 };
-    
                 const config = {
                     type: 'bar',
                     data: data,
@@ -124,19 +128,13 @@ fetch('Hotel_EDI.json')
                             y: {
                                 beginAtZero: true
                             }
-                        },
-                        title: {
-                            display: true,
-                            text: 'Liczba hoteli z dostępem do wifi',
-                            fontSize: 16
                         }
                     }
                 };
-    
                 var barChart = new Chart(
                     document.getElementById('barChart'), config
-                );
-            })
+                ); 
+             })
             .catch(error => console.error('Error fetching JSON:', error));
    
 </script>
