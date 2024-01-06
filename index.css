@@ -193,6 +193,10 @@ img: hover{
 .dark-mode #lewo, .dark-mode #prawo{
     background-color: #120926;
 }
+.dark-mode div1{
+    color: white;
+    
+}
 
 #prawo > button {
     background-color: inherit;
