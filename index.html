@@ -77,6 +77,8 @@
         </div>
 
 <script>
+const ctx = document.getElementById('hotelsChart').getContext('2d');
+
 fetch('Hotel_EDI.json')
     .then(response => response.json())
     .then(data => {
@@ -85,35 +87,30 @@ fetch('Hotel_EDI.json')
             const country = (entry['kraj '] || '').trim();
             countryCounts[country] = (countryCounts[country] || 0) + 1;
         });
-
         const labels = Object.keys(countryCounts);
         const values = Object.values(countryCounts);
 
-        const ctx = document.getElementById('hotelsChart').getContext('2d');
-        const isDarkMode = document.body.classList.contains("dark-mode");
-
         new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: labels,
-            datasets: [{
-                data: values,
-                backgroundColor: isDarkMode ? ['black', 'white', 'blue'] : ['pink', 'rgb(244, 230, 146)', 'blanchedalmond'],
-        }]
-    },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Liczba hoteli w poszczególnych krajach',
-                    fontSize: 16,
-                    color: isDarkMode ? '#fff' : 'black',
-                }
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: values,
+                    backgroundColor: ['pink', 'rgb(244, 230, 146)', 'blanchedalmond'],
+                }]
             },
-        }
-    });
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Liczba hoteli w poszczególnych krajach',
+                        fontSize: 30,
+                    }
+                }
+            }
+        });
     })
     .catch(error => console.error('Error fetching data:', error));
     </script>
