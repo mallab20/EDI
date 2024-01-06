@@ -110,10 +110,7 @@ fetch('Hotel_EDI.json')
                 datasets: [{
                     label:'Number of hotels with wifi access',
                     data: [countT, countF],
-                    backgroundColor: [
-                    'rgba(255, 99, 132, 0.3)',
-                    'rgba(255, 159, 64, 0.3)'
-                    ],
+                    backgroundColor: ['rgb(244, 230, 146)', 'blanchedalmond'],
                     borderColor: [
                     'rgb(255, 99, 132)',
                     'rgb(255, 159, 64)',
@@ -129,7 +126,11 @@ fetch('Hotel_EDI.json')
                         y: {
                             beginAtZero: true
                         }
-                    }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Liczba hoteli w poszczególnych krajach',
+                        fontSize: 16
                 }
             };
             var barChart = new Chart(
