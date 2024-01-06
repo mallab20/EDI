@@ -76,7 +76,9 @@ img{
 #internet{
     bottom: 100px;
 }
-
+#search{
+    color: white;
+}
 #table1 {
     width: 100%;
     border-collapse: collapse;
