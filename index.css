@@ -64,8 +64,7 @@ img{
     margin: 15px;
 }
 img: hover{
-     border: 5px solid;
-     color: rgb(245, 66, 221);
+     border: 5px solid rgb(245, 66, 221);
 }
 
 #informacje{
@@ -89,6 +88,7 @@ img: hover{
     padding-left: 10px;
     background-color: rgb(245, 200, 66);
     text-align: justify;
+    color: white;
     
        
 }
