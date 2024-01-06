@@ -76,6 +76,9 @@ img{
 #internet{
     bottom: 100px;
 }
+#search{
+    color: black;
+}
 .darkmode #search{
     color: white;
 }
