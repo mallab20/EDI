@@ -83,6 +83,8 @@ fetch('Hotel_EDI.json')
                 }
             }
         });
+       const myButton = document.getElementById("myButton");
+        let background = true;
        myButton.addEventListener("click", function(){
             if (background) {
                 chart.data.datasets[0].backgroundColor = ['black', 'white', 'blue'];
