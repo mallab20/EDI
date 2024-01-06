@@ -116,18 +116,9 @@ fetch('Hotel_EDI.json')
     .catch(error => console.error('Error fetching data:', error));
     </script>
 <script> 
-       //fetch: give me what I've thrown out
-        async function fetch(){
-            const url = 'Hotel_EDI.json';
-            const response = await fetch(url) //waiting for response from the fetch
-            const datapoints = await response.json() //we parse the data 'response' from the file url and make it readable for js
-            console.log(datapoints)
-            return datapoints
-        }
-
-        //setup
-        const labels = ['Jan','Feb','march','April','May','June','July']
-
+      const labels = ['Jan','Feb','march','April','May','June','July']
+        
+        
         const data = {
             labels: labels,
             datasets: [{
@@ -154,7 +145,7 @@ fetch('Hotel_EDI.json')
                 borderWidth: 1
             }]
         }
-        //config
+
         const config = {
             type: 'bar',
             data: data,
