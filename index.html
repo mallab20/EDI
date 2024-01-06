@@ -84,21 +84,6 @@ fetch('Hotel_EDI.json')
                 }
             }
         });
-          function updateChartColors() {
-                            const isDarkMode = document.body.classList.contains('dark-mode');
-                            const backgroundColors = isDarkMode
-                                ? ['black', 'white', 'blue'] // Change these colors for dark mode
-                                : ['pink', 'rgb(244, 230, 146)', 'blanchedalmond'];
-
-                            hotelsChart.data.datasets[0].backgroundColor = backgroundColors;
-                            if (hotelsChart && hotelsChart.data && hotelsChart.data.datasets) {
-                            hotelsChart.data.datasets[0].backgroundColor = backgroundColors;
-                            hotelsChart.update();
-                        }
-
-                        // Add the event listener to update colors on dark mode toggle
-                        document.getElementById('myButton').addEventListener('click', updateChartColors);
-                    })
                     .catch(error => console.error('Error fetching data:', error));
             </script>
 <script> 
