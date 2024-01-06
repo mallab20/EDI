@@ -20,12 +20,12 @@
         </div>
         <div id = "środek">
             <div id = "zdjęcia">
-                <img id = "włochy" src="włochy.jpg">
+                <img id = "włochy" src="włochy.jpg" onclick='initText()'>
                 <img id = "portugalia" src="portugalia.jpg">
                 <img id = "grecja" src="grecja.jpg">
             </div>
             <div id = "informacje">
-
+                <p id='tekst_tutaj'></p>
             </div>
             <div id = "prawo">
                 <button id = "myButton"onclick="darkmode()"><img id = "księżyc" src = "moon.png" /></button>
@@ -47,7 +47,14 @@
         <div id = "footer">
             <p> REKLAMA tak</p>
         </div>
-
+<script>
+//na wyświetlanie tekstu- Włochy
+    function initText(){
+        description = 'Kto nie chciałby znaleźć się w słonecznych Włoszech, zwiedzać Forum Romanum i Koloseum lub opalać się nad Morzem Adriatyckim, Tyrreńskim, czy Liguryjskim. W ofercie naszego biura podróży znajdą Państwo hotele na każdą kieszeń; z małą odległością od plaży i własnym basenem po te bez dostępu do wifi lecz z uśmiechniętymi właścicielami.' 
+        document.getElemntById('tekst_tutaj').innerHTML = description
+    }
+    
+</script>
 <script>
 fetch('Hotel_EDI.json')
     .then(response => response.json())
