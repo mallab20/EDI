@@ -40,7 +40,7 @@
                 <canvas id="hotelsChart" width="400" height="400"></canvas>
             </div>
             <div id = 'chart2'>
-                <canvas id="barChart" width = "500" height = "500"></canvas>
+                <canvas id="barChart" width = "400" height = "400"></canvas>
             </div>
         </div>
       
@@ -107,7 +107,7 @@ fetch('Hotel_EDI.json')
                 const data = {
                     labels: labels,
                     datasets: [{
-                        //label:'Number of hotels with wifi access',
+                        label:'Z wifi', 'Bez wifi',
                         data: [countT, countF],
                         backgroundColor: [
                         'rgba(245, 66, 179, 0.6)',
