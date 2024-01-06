@@ -97,8 +97,7 @@ fetch('Hotel_EDI.json')
                 labels: labels,
                 datasets: [{
                     data: values,
-                    backgroundColor: ['pink', 'rgb(244, 230, 146)', 'blanchedalmond'],
-                    backgroundColor: isDarkMode ? ['black', 'white', 'pink'],
+                    backgroundColor: isDarkMode ? ['black', 'white', 'pink'] : ['pink', 'rgb(244, 230, 146)', 'blanchedalmond'],
 
                 }]
             },
