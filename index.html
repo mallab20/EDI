@@ -103,27 +103,33 @@ fetch('Hotel_EDI.json')
                 console.log('Number of true values for wifi:', countT);
                 console.log('Number of false occurences in wifi section:', countF);
         
-                const labels = ['Has wifi access','No wifi']
+                const labels = ['Z dostępem do wifi','Bez dostępu do wifi']
                 const data = {
                     labels: labels,
                     datasets: [{
-                        label:'Number of hotels with wifi access',
+                        //label:'Number of hotels with wifi access',
                         data: [countT, countF],
                         backgroundColor: [
-                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(245, 66, 179, 0.7)',
                         'rgba(255, 159, 64, 0.7)'
                         ],
                         borderColor: [
                         'rgb(255, 99, 132)',
                         'rgb(255, 159, 64)',
                         ],
-                        borderWidth: 1
+                        borderWidth: 2
                     }]
                 };
                 const config = {
                     type: 'bar',
                     data: data,
                     options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Liczba hoteli z dostępem do wifi',
+                                fontSize: 16,
+                        },
                         scales: {
                             y: {
                                 beginAtZero: true
