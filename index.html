@@ -91,7 +91,9 @@ fetch('Hotel_EDI.json')
                                 : ['pink', 'rgb(244, 230, 146)', 'blanchedalmond'];
 
                             hotelsChart.data.datasets[0].backgroundColor = backgroundColors;
-                            hotelsChart.update(); // Update the chart to reflect the changes
+                            if (hotelsChart && hotelsChart.data && hotelsChart.data.datasets) {
+                            hotelsChart.data.datasets[0].backgroundColor = backgroundColors;
+                            hotelsChart.update();
                         }
 
                         // Add the event listener to update colors on dark mode toggle
