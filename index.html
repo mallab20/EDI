@@ -84,6 +84,18 @@ fetch('Hotel_EDI.json')
                 }
             }
         });
+         function updateChartColors() {
+                            const isDarkMode = document.body.classList.contains('dark-mode');
+                            const backgroundColors = isDarkMode
+                                ? ['black', 'white', 'blue'] 
+                                : ['pink', 'rgb(244, 230, 146)', 'blanchedalmond'];
+
+                            hotelsChart.data.datasets[0].backgroundColor = backgroundColors;
+                            hotelsChart.update(); 
+                        }
+
+                        document.getElementById('myButton').addEventListener('click', updateChartColors);
+                    })
     })
     .catch(error => console.error('Error fetching data:', error));
     </script>
