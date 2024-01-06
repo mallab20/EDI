@@ -100,39 +100,59 @@ fetch('Hotel_EDI.json')
                     .catch(error => console.error('Error fetching data:', error));
             </script>
 <script> 
-       fetch('Hotel_EDI.json')
-      .then(response => response.json())
-      .then(data => {
-        const countryCounts = {};
-        data.forEach(entry => {
-          const hasWiFiAccess = entry['wifi'] || false;
-          if (hasWiFiAccess) {
-            const country = (entry['kraj '] || '').trim();
-            countryCounts[country] = (countryCounts[country] || 0) + 1;
-          }
-        });
-
-        const ctx = document.getElementById('barChart').getContext('2d');
-
-          new Chart(ctx, {
-              type: 'bar',
-              data: {
-                  datasets: [{
-                      labels: labels,
-                      data: values,
-                      borderWidth: 1,
-                      backgroundColor: ["rgb(68, 172, 201)", "rgb(36, 187, 242)", "rgb(36, 43, 242)"]
-                  }]
-              },
-             options: {
-                 scales: {
-                     y: {
-                         beginAtZero: true
-                     }
-                 }
-             }
-          });   
+    
+    fetch('Hotel_EDI.json')
+    .then(response => response.json())
+    .then(jsondata => {
+            console.log(jsondata.kraj);
+        
+            let countF = 0;
+            let countT = 0;
+            jsondata.forEach(item => {
+                if (item.wifi === true) {
+                    countT++;
+                } else {
+                    countF++; }
+                });
+            console.log('Number of true values for wifi:', countT);
+            console.log('Number of false occurences in wifi section:', countF);
+    
+            const labels = ['Has wifi access','No wifi']
+            const data = {
+                labels: labels,
+                datasets: [{
+                    label:'Number of hotels with wifi access',
+                    data: [countT, countF],
+                    backgroundColor: [
+                    'rgba(255, 99, 132, 0.3)',
+                    'rgba(255, 159, 64, 0.3)'
+                    ],
+                    borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    ],
+                    borderWidth: 1
+                }]
+            };
+            const config = {
+                type: 'bar',
+                data: data,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            };
+            var barChart = new Chart(
+                document.getElementById('barChart'), config
+            ); 
+         })
+        .catch(error => console.error('Error fetching JSON:', error));
+     
 </script>
+    
 <script>
     function hideFooter() {
     var footer = document.getElementById('footer');
