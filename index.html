@@ -124,6 +124,13 @@ fetch('Hotel_EDI.json')
                     type: 'bar',
                     data: data,
                     options: {
+                        plugins: {
+                        title: {
+                            display: true,
+                            text: 'Liczba hoteli w poszczególnych krajach',
+                            fontSize: 16,
+                        }
+                    },
                         scales: {
                             y: {
                                 beginAtZero: true
