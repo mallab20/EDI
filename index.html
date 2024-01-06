@@ -22,10 +22,11 @@
             <div id = "zdjęcia">
                 <img id = "włochy" src="włochy.jpg" onclick='initText()'>
                 <img id = "portugalia" src="portugalia.jpg" onclick='initText2()'>
-                <img id = "grecja" src="grecja.jpg" onclick='initText3()'>
+                <img id = "hiszpania" src="grecja.jpg" onclick='initText3()'>
             </div>
             <div id = "informacje">
                 <div class = 'div1'>
+                    <pre id='nagłówek'>Czego dziś szukasz? </pre>
                     <pre id='tekst_tutaj'> Na naszej stronie znajdą Państwo wszystkie najlepsze hotele z 
                         trzech najbardziej słonecznych krajów Europy Południowej; Włoszech, Portugalii i Hiszpanii. </pre>
                 </div>
@@ -55,22 +56,25 @@
     function initText(){
         desc0 = 'Włochy\n\n'
         
-        description = 'Kto nie chciałby znaleźć się w słonecznych Włoszech,\nzwiedzać Forum Romanum i Koloseum lub \nopalać się nad Morzem Adriatyckim, \nTyrreńskim, czy Liguryjskim. W ofercie naszego biura podróży znajdą Państwo hotele na każdą kieszeń; z małą odległością od plaży i własnym basenem po te bez dostępu do wifi lecz z uśmiechniętymi właścicielami.' 
-        document.getElementById('tekst_tutaj').innerHTML = desc0 + description
+        desc1 = 'Kto nie chciałby znaleźć się w słonecznych Włoszech,\nzwiedzać Forum Romanum i Koloseum lub \nopalać się nad Morzem Adriatyckim, \nTyrreńskim, czy Liguryjskim. W ofercie naszego biura podróży znajdą Państwo hotele na każdą kieszeń; z małą odległością od plaży i własnym basenem po te bez dostępu do wifi lecz z uśmiechniętymi właścicielami.' 
+        document.getElementById('nagłówek').innerHTML = desc0 
+        document.getElementById('tekst_tutaj').innerHTML = desc1
     }
 //na wyświetlanie tekstu- Portugalia
     function initText2(){
         desc0 = 'Portugalia\n\n'
-        desc1 = 'Państwo położone w strefie klimatu śródziemnomorskiego.\n Może poszczycić się długimi piaszczystymi plażami,\n położeniem nad Oceanem Atlantyckim i na tyle dużymi\n falami, że jak najbardziej można tam surfować.' 
-        desc2 = 'Jednak nie tylko piękna przyroda i bogata historia\n definiują Portugalię. Przede wszystkim jest to\nżycie towarzyskie, kultura i niepowtarzalna atmosfera.\n Jeśli również chcą ją Państwo poczuć, zachęcamy\n do zapoznania się z naszym katalogiem hoteli.'
-        document.getElementById('tekst_tutaj').innerHTML = desc0 + desc1 + desc2
+        desc1 = 'Państwo położone w strefie klimatu śródziemnomorskiego.\n Może poszczycić się długimi piaszczystymi plażami,\n położeniem nad Oceanem Atlantyckim i na tyle dużymi\n falami, że jak najbardziej można tam surfować.\n' 
+        desc2 = 'Jednak nie tylko piękna przyroda i bogata\n historia definiują Portugalię. Przede wszystkim jest\n to życie towarzyskie, kultura i niepowtarzalna \natmosfera. Jeśli również chcą ją Państwo poczuć, \nzachęcamy do zapoznania się z naszym katalogiem hoteli.'
+        document.getElementById('nagłówek').innerHTML = desc0
+        document.getElementById('tekst_tutaj').innerHTML = desc1 + desc2
     }
 //na wyświetlanie tekstu- Hiszpania
     function initText3(){
         desc0 = 'Hiszpania\n\n'
         desc3 = 'Państwo położone na Półwyspie Iberyjskim\n jest bogate w wiele zasobów naturalnych.\n Posiada 17 regionów autonomicznych'
         desc4 =  'Hiszpania jest domem wielu artystów takich\n jak Salvador Dali, Antoni Gaudi, czy Pablo Picasso.\n To da się odczuć przechadzając się\njej uliczkami, czy podziwiając ich prace \nw muzeach. W naszym katalogu hoteli mogą znaleźć\n Państwo ten jedyny, który uczyni Państwa pobyt \njeszcze lepszym i bardziej klimatycznym.' 
-        document.getElemntById('tekst_tutaj').innerHTML = desc0 + desc3 + desc4 
+        document.getElemntById('nagłówek').innerHTML = desc0
+        document.getElemntById('tekst_tutaj').innerHTML = desc3 + desc4 
     }
     
 </script>
