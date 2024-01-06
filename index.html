@@ -84,20 +84,21 @@ fetch('Hotel_EDI.json')
                 }
             }
         });
-         function updateChartColors() {
+          function updateChartColors() {
                             const isDarkMode = document.body.classList.contains('dark-mode');
                             const backgroundColors = isDarkMode
-                                ? ['black', 'white', 'blue'] 
+                                ? ['black', 'white', 'blue'] // Change these colors for dark mode
                                 : ['pink', 'rgb(244, 230, 146)', 'blanchedalmond'];
 
                             hotelsChart.data.datasets[0].backgroundColor = backgroundColors;
-                            hotelsChart.update(); 
+                            hotelsChart.update(); // Update the chart to reflect the changes
                         }
 
+                        // Add the event listener to update colors on dark mode toggle
                         document.getElementById('myButton').addEventListener('click', updateChartColors);
                     })
-    .catch(error => console.error('Error fetching data:', error));
-    </script>
+                    .catch(error => console.error('Error fetching data:', error));
+            </script>
 <script> 
        fetch('Hotel_EDI.json')
       .then(response => response.json())
