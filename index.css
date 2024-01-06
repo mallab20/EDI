@@ -109,8 +109,11 @@ img{
 #table1 tbody tr:hover {
     background-color: pink;
 }
-
 #chart1{
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+#chart2{
     margin-bottom: 101px;
 }
 .dark-mode #table1 {
