@@ -76,7 +76,7 @@ img{
 #internet{
     bottom: 100px;
 }
-#search{
+.darkmode #search{
     color: white;
 }
 #table1 {
