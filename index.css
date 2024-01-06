@@ -63,9 +63,7 @@ img{
     height: 170px;
     margin: 15px;
 }
-img:hover{
-     border: 5px solid rgb(245, 66, 221);
-}
+
 
 #informacje{
     background-color: blanchedalmond;
@@ -75,7 +73,7 @@ img:hover{
     display: inline;
     float: left;
 }
-.div1{
+#div1{
     width: 40vw;
     height: 400px; 
     margin-left: auto;
@@ -198,8 +196,10 @@ img:hover{
 .dark-mode #lewo, .dark-mode #prawo{
     background-color: #120926;
 }
-.dark-mode div1{
+.dark-mode #div1{
     color: white;
+    background-color:rgba(245, 200, 66, 0.3);
+    border-color: rgba(117,117,117,0.8);
     
 }
 
