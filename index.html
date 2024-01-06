@@ -25,8 +25,10 @@
                 <img id = "grecja" src="grecja.jpg">
             </div>
             <div id = "informacje">
-                <p id='tekst_tutaj'> Na naszej stronie znajdą Państwo wszystkie najlepsze hotele z 
-                    trzech najbardziej słonecznych krajów Europy Południowej; Włoszech, Portugalii i Hiszpanii. </p>
+                <div class = 'div1'>
+                    <p id='tekst_tutaj'> Na naszej stronie znajdą Państwo wszystkie najlepsze hotele z 
+                        trzech najbardziej słonecznych krajów Europy Południowej; Włoszech, Portugalii i Hiszpanii. </p>
+                </div>
             </div>
             <div id = "prawo">
                 <button id = "myButton"onclick="darkmode()"><img id = "księżyc" src = "moon.png" /></button>
@@ -51,6 +53,8 @@
 <script>
 //na wyświetlanie tekstu- Włochy
     function initText(){
+        desc0 = 'Włochy\n\n'
+        
         description = 'Kto nie chciałby znaleźć się w słonecznych Włoszech, zwiedzać Forum Romanum i Koloseum lub opalać się nad Morzem Adriatyckim, Tyrreńskim, czy Liguryjskim. W ofercie naszego biura podróży znajdą Państwo hotele na każdą kieszeń; z małą odległością od plaży i własnym basenem po te bez dostępu do wifi lecz z uśmiechniętymi właścicielami.' 
         document.getElementById('tekst_tutaj').innerHTML = description
     }
