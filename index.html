@@ -90,15 +90,13 @@ fetch('Hotel_EDI.json')
         const values = Object.values(countryCounts);
 
         const ctx = document.getElementById('hotelsChart').getContext('2d');
-        const isDarkMode = document.body.classList.contains("dark-mode");
         new Chart(ctx, {
             type: 'pie',
             data: {
                 labels: labels,
                 datasets: [{
                     data: values,
-                    backgroundColor: isDarkMode ? ['black', 'white', 'pink'] : ['pink', 'rgb(244, 230, 146)', 'blanchedalmond']
-
+                    backgroundColor: ['pink', 'rgb(244, 230, 146)', 'blanchedalmond'],
                 }]
             },
             options: {
