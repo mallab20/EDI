@@ -1,10 +1,14 @@
+body {
+    margin: 0;
+}
 
 .table-container {
+    width: 100%;
     max-width: 100%;
     overflow-x: auto;
     margin: 0 auto;
+    padding: 20px;
 }
-
 
 #table1 {
     width: 100%;
