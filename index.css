@@ -44,8 +44,6 @@ body{
 
 #footer {
     bottom: 0;
-    width: 100vw;
-    height: 100px;
     background-color: pink;
     position: fixed;
     display: flex;
@@ -54,7 +52,7 @@ body{
 }
 
 #footer img {
-    width: 30%;
+    width: 40%;
     height: 90%;
     max-width: 100%;
     max-height: 100%;
