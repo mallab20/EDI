@@ -22,7 +22,7 @@
             <div id = "zdjęcia">
                 <img id = "włochy" src="włochy.jpg" onclick='initText()'>
                 <img id = "portugalia" src="portugalia.jpg" onclick='initText2()'>
-                <img id = "grecja" src="grecja.jpg" onclick='initText3()'>
+                <img id = "hiszpania" src="hiszpania.jpg" onclick='initText3()'>
             </div>
             <div id = "informacje">
                 <div class = 'div1'>
@@ -34,7 +34,7 @@
     Południowej; Włoszech, Portugalii 
     i Hiszpanii. </pre>
                 </div>
-                <pre id='medium'> Kliknij na zdjęcia, żeby zapoznać się z opisem Twoich przyszłych destynacji. </pre>
+                <pre id='medium'> Kliknij na zdjęcia, żeby zobaczyć opis Twoich przyszłych destynacji. </pre>
             </div>
             <div id = "prawo">
                 <button id = "myButton"onclick="darkmode()"><img id = "księżyc" src = "moon.png" /></button>
@@ -214,7 +214,7 @@ fetch('Hotel_EDI.json')
 <script>
 const img1 = document.getElementById("włochy");
 const img2 = document.getElementById("portugalia");
-const img3 = document.getElementById("grecja");
+const img3 = document.getElementById("hiszpania");
 const img4 = document.getElementById("księżyc");
 const myButton = document.getElementById("myButton");
 
@@ -224,12 +224,12 @@ myButton.addEventListener("click", function() {
   if (isFirstImage) {
     img1.src = "włochynoc.jpg";
     img2.src = "portugalianoc.jpg";
-    img3.src = "grecjanoc.jpg";
+    img3.src = "hiszpania-noc.jpg";
     img4.src = "sun.png"
   } else {
     img1.src = "włochy.jpg";
     img2.src = "portugalia.jpg"
-    img3.src = "grecja.jpg";
+    img3.src = "hiszpania.jpg";
     img4.src = "moon.png"
   }
   isFirstImage = !isFirstImage;
