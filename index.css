@@ -80,7 +80,7 @@ img{
     font-size: 12px;
     padding: 10px;
 }
-.darkmode #medium{
+.dark-mode #medium{
     color: rgba(252,252,252,0.8);
     border-color: rgba(252,252,252,0.6);
     background-color: #150e42;
