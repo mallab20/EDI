@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<head> 
+    <title> projekt grupowy ewd</title>
+    <link rel = "stylesheet" href = "index.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+    <div id = "header">
+        <h1> Hotele </h1>
+        <a href="tabela2.html"><button id="tabelaButton">Tabela Hoteli</button></a>
+        <p> Małgorzata Łabuzek</p>
+        <p> Kamila Łopatowska</p>
+        <p> Łucja Romańska </p>
+    </div>
+    <div id = "główna">
+        <div id = "lewo">
+
+        </div>
+        <div id = "środek">
+            <div id = "zdjęcia">
+                <img id = "włochy" src="włochy.jpg" onclick='initText()'>
+                <img id = "portugalia" src="portugalia.jpg" onclick='initText2()'>
+                <img id = "hiszpania" src="grecja.jpg" onclick='initText3()'>
+            </div>
+            <div id = "informacje">
+                <div class = 'div1'>
+                    <pre id='nagłówek'>Czego dziś szukasz? </pre>
+                    <pre id='tekst_tutaj'> 
+    Na naszej stronie znajdą Państwo 
+    wszystkie najlepsze hotele z trzech 
+    najbardziej słonecznych krajów Europy
+    Południowej; Włoszech, Portugalii 
+    i Hiszpanii. </pre>
+                </div>
+            </div>
+            <div id = "prawo">
+                <button id = "myButton"onclick="darkmode()"><img id = "księżyc" src = "moon.png" /></button>
+                <div id = "internet">
+                <form autocomplete="off" action="https://duckduckgo.com/?" target="_blank">
+                    <label id = "search" for="fname">SEARCH</label><br>
+                    <input type="text" id="q" name="q" value=""><br>
+                    <input type="submit" value="Szukaj">
+                    </form>
+                </div>
+            <div id = "chart1">
+                <canvas id="hotelsChart" width="400" height="400"></canvas>
+            </div>
+            <div id = 'chart2'>
+                <canvas id="barChart" width = "400" height = "400"></canvas>
+            </div>
+        </div>
+      
+        <div id = "footer">
+            <img src="path/to/your/image/reklama.jpg" alt="Reklama Image">
+        </div>
+<script>
+//na wyświetlanie tekstu- Włochy
+    function initText(){
+        desc0 = 'Włochy\n\n'
+        
+        desc1 = 'Kto nie chciałby znaleźć się w słonecznych Włoszech,\nzwiedzać Forum Romanum, Koloseum lub opalać się\nnad Morzem Adriatyckim, Tyrreńskim, czy Liguryjskim. \nW ofercie naszego biura podróży znajdą Państwo hotele\nna każdą kieszeń; z małą odległością od plaży\ni własnym basenem po te bez dostępu do wifi\nlecz z uśmiechniętymi właścicielami.' 
+        document.getElementById('nagłówek').innerHTML = desc0 
+        document.getElementById('tekst_tutaj').innerHTML = desc1
+    }
+//na wyświetlanie tekstu- Portugalia
+    function initText2(){
+        desc0 = 'Portugalia\n\n'
+        desc1 = 'Państwo położone w strefie klimatu śródziemnomorskiego.\nMoże poszczycić się długimi piaszczystymi plażami,\npołożeniem nad Oceanem Atlantyckim i na tyle dużymi\nfalami, że jak najbardziej można tam surfować.\n' 
+        desc2 = 'Jednak nie tylko piękna przyroda i bogata historia\ndefiniują Portugalię. Przede wszystkim jest to\nżycie towarzyskie, kultura i niepowtarzalna atmosfera.\nJeśli również chcą ją Państwo poczuć, zachęcamy\ndo zapoznania się z naszym katalogiem hoteli.'
+        document.getElementById('nagłówek').innerHTML = desc0
+        document.getElementById('tekst_tutaj').innerHTML = desc1 + desc2
+    }
+//na wyświetlanie tekstu- Hiszpania
+    function initText3(){
+        desc0 = 'Hiszpania\n\n'
+        desc3 = 'Państwo położone na Półwyspie Iberyjskim jest bogate\nw wiele zasobów naturalnych. Posiada 17 regionów autonomicznych\n'
+        desc4 =  'Hiszpania jest domem wielu artystów takich jak Salvador\nDali, Antoni Gaudi, czy Pablo Picasso. To da się odczuć\nprzechadzając się jej uliczkami, czy podziwiając ich prace \nw muzeach. W naszym katalogu hoteli mogą znaleźć\nPaństwo ten jedyny, który uczyni Państwa pobyt \njeszcze lepszym i bardziej klimatycznym.' 
+        document.getElementById('nagłówek').innerHTML = desc0
+        document.getElementById('tekst_tutaj').innerHTML = desc3 + desc4 
+    }
+    
+</script>
+<script>
+fetch('Hotel_EDI.json')
+    .then(response => response.json())
+    .then(data => {
+        const countryCounts = {};
+        data.forEach(entry => {
+            const country = (entry['kraj '] || '').trim();
+            countryCounts[country] = (countryCounts[country] || 0) + 1;
+        });
+
+        const labels = Object.keys(countryCounts);
+        const values = Object.values(countryCounts);
+
+        const ctx = document.getElementById('hotelsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: values,
+                    backgroundColor: ['rgba(255,192,203, 0.7)', 'rgba(244, 230, 146, 0.7)', 'rgba(255, 235, 205, 0.7)'],
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Liczba hoteli w poszczególnych krajach',
+                        fontSize: 16,
+                    }
+                }
+            }
+        });
+    })
+                    .catch(error => console.error('Error fetching data:', error));
+            </script>
+<script> 
+    fetch('Hotel_EDI.json')
+        .then(response => response.json())
+        .then(jsondata => {
+                console.log(jsondata.kraj);
+            
+                let countF = 0;
+                let countT = 0;
+                jsondata.forEach(item => {
+                    if (item.wifi === true) {
+                        countT++;
+                    } else {
+                        countF++; }
+                    });
+                console.log('Number of true values for wifi:', countT);
+                console.log('Number of false occurences in wifi section:', countF);
+        
+                const labels = ['Z dostępem do wifi','Bez dostępu do wifi']
+                const data = {
+                    labels: labels,
+                    datasets: [{
+                        label:'Z wifi vs Bez wifi',
+                        data: [countT, countF],
+                        backgroundColor: [
+                        'rgba(245, 66, 179, 0.6)',
+                        'rgba(255, 159, 64, 0.6)'
+                        ],
+                        borderColor: [
+                        'white',
+                        'white',
+                        ],
+                        borderWidth: 2
+                    }]
+                };
+                const config = {
+                    type: 'bar',
+                    data: data,
+                    options: {
+                        plugins: {
+                        title: {
+                            display: true,
+                            text: 'Liczba hoteli z dostępem do wifi',
+                            fontSize: 16,
+                        }
+                    },
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                };
+                var barChart = new Chart(
+                    document.getElementById('barChart'), config
+                ); 
+             })
+            .catch(error => console.error('Error fetching JSON:', error));
+   
+</script>
+    
+<script>
+    function hideFooter() {
+    var footer = document.getElementById('footer');
+    footer.style.display = 'none';
+  }
+
+    function createHideButton() {
+    var footer = document.getElementById('footer');
+
+    var hideButton = document.createElement('button');
+    hideButton.textContent = 'x';
+    hideButton.style.position = 'absolute';
+    hideButton.style.top = '5px';
+    hideButton.style.right = '15px';
+    hideButton.style.cursor = 'pointer';
+
+    hideButton.addEventListener('click', hideFooter);
+
+    footer.appendChild(hideButton);
+  }
+
+    window.onload = createHideButton;
+</script>        
+        
+<script>
+    function darkmode() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+    }
+</script>
+<script>
+const img1 = document.getElementById("włochy");
+const img2 = document.getElementById("portugalia");
+const img3 = document.getElementById("grecja");
+const img4 = document.getElementById("księżyc");
+const myButton = document.getElementById("myButton");
+
+let isFirstImage = true;
+
+myButton.addEventListener("click", function() {
+  if (isFirstImage) {
+    img1.src = "włochynoc.jpg";
+    img2.src = "portugalianoc.jpg";
+    img3.src = "grecjanoc.jpg";
+    img4.src = "sun.png"
+  } else {
+    img1.src = "włochy.jpg";
+    img2.src = "portugalia.jpg"
+    img3.src = "grecja.jpg";
+    img4.src = "moon.png"
+  }
+  isFirstImage = !isFirstImage;
+
+  
+});
+</script>
+</body>
