@@ -80,12 +80,6 @@ img{
     font-size: 12px;
     padding: 10px;
 }
-.dark-mode #medium{
-    color: rgba(252,252,252,0.8);
-    border-color: rgba(252,252,252,0.6);
-    background-color: #150e42;
-}
-
 
 #informacje{
     background-color: blanchedalmond;
@@ -224,6 +218,11 @@ img{
     background-color:rgba(54, 38, 158,0.4);
     border-color: rgba(252,252,252,0.7);
     
+}
+.dark-mode #medium{
+    color: rgba(252,252,252,0.8);
+    border-color: rgba(252,252,252,0.6);
+    background-color: #150e42;
 }
 
 #prawo > button {
