@@ -204,9 +204,9 @@ img{
     background-color: #120926;
 }
 .dark-mode .div1{
-    color: white;
-    background-color:rgba(245, 200, 66, 0.3);
-    border-color: rgba(117,117,117,0.8);
+    color: rgba(252,252,252,0.8);
+    background-color:rgba(61, 43, 179);
+    border-color: rgba(252,252,252,0.8);
     
 }
 
