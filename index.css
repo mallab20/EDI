@@ -72,6 +72,7 @@ img{
 }
 #medium{
     text-align: center;
+    color: black;
 }
 .darkmode #medium{
     color: color: rgba(252,252,252,0.8);
