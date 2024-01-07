@@ -70,6 +70,12 @@ img{
     height: 170px;
     margin: 15px;
 }
+#medium{
+    text-align: center;
+}
+.darkmode #medium{
+    color: color: rgba(252,252,252,0.8);
+}
 
 
 #informacje{
@@ -78,6 +84,7 @@ img{
     width: 45vw;
     margin-top:20px;
     display: inline;
+    color: white;
     float: left;
 }
 .div1{
