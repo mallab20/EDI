@@ -203,7 +203,7 @@ img{
 .dark-mode #lewo, .dark-mode #prawo{
     background-color: #120926;
 }
-.dark-mode #div1{
+.dark-mode .div1{
     color: white;
     background-color:rgba(245, 200, 66, 0.3);
     border-color: rgba(117,117,117,0.8);
