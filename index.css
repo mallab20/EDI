@@ -212,7 +212,7 @@ img{
 }
 .dark-mode .div1{
     color: rgba(252,252,252,0.8);
-    background-color:rgba(61, 43, 179);
+    background-color:rgb(61, 43, 179);
     border-color: rgba(252,252,252,0.8);
     
 }
