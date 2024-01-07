@@ -54,10 +54,9 @@ body{
 }
 
 #footer img {
-    width: auto;
-    height: 100%;
+    width: 50%;
+    height: auto;/
     max-width: 100%;
-    object-fit: contain;
 }
 
 #zdjęcia{
