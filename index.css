@@ -54,10 +54,10 @@ body{
 }
 
 #footer img {
-    width: 40%;
-    height: auto;
-    max-height: 100%;
+    width: 40%; 
+    height: 60%;
     max-width: 100%;
+    max-height: 100%;
 }
 
 #zdjęcia{
